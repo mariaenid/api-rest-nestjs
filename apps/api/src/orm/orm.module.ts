@@ -1,6 +1,7 @@
 
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Task } from '../entities';
 
 
 @Module({
@@ -12,10 +13,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'admin',
       password: 'admin',
       database: 'nestjs',
-      entities: [/*HERE Entities*/],
+      entities: [Task],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([/*HERE Entities*/]),
+    TypeOrmModule.forFeature([Task]),
   ],
   exports: [TypeOrmModule, OrmModule],
 })
